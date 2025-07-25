@@ -1,8 +1,8 @@
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------
 //
-// Metal/MTL4BinaryFunction.hpp
+// Metal/MTLGPUAddress.hpp
 //
-// Copyright 2020-2025 Apple Inc.
+// Copyright 2025 Apple Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,31 +20,17 @@
 
 #pragma once
 
-#include "../Foundation/Foundation.hpp"
-#include "MTLDefines.hpp"
-#include "MTLHeaderBridge.hpp"
-#include "MTLLibrary.hpp"
-#include "MTLPrivate.hpp"
+#ifdef __METAL_VERSION__
 
-namespace MTL4
+#include <metal_stdlib>
+
+#else
+
+#include <cstdint>
+
+#endif // __METAL_VERSION__
+
+namespace MTL
 {
-
-class BinaryFunction : public NS::Referencing<BinaryFunction>
-{
-public:
-    MTL::FunctionType functionType() const;
-
-    NS::String*       name() const;
-};
-
-}
-
-_MTL_INLINE MTL::FunctionType MTL4::BinaryFunction::functionType() const
-{
-    return Object::sendMessage<MTL::FunctionType>(this, _MTL_PRIVATE_SEL(functionType));
-}
-
-_MTL_INLINE NS::String* MTL4::BinaryFunction::name() const
-{
-    return Object::sendMessage<NS::String*>(this, _MTL_PRIVATE_SEL(name));
+    using GPUAddress = uint64_t;
 }

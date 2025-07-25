@@ -34,7 +34,6 @@ _MTL_PRIVATE_DEF_CLS(MTL4AccelerationStructureMotionTriangleGeometryDescriptor);
 _MTL_PRIVATE_DEF_CLS(MTL4AccelerationStructureTriangleGeometryDescriptor);
 _MTL_PRIVATE_DEF_CLS(MTL4ArgumentTableDescriptor);
 _MTL_PRIVATE_DEF_CLS(MTL4BinaryFunctionDescriptor);
-_MTL_PRIVATE_DEF_CLS(MTL4BinaryFunctionReflection);
 _MTL_PRIVATE_DEF_CLS(MTL4CommandAllocatorDescriptor);
 _MTL_PRIVATE_DEF_CLS(MTL4CommandBufferOptions);
 _MTL_PRIVATE_DEF_CLS(MTL4CommandQueueDescriptor);
@@ -48,7 +47,6 @@ _MTL_PRIVATE_DEF_CLS(MTL4IndirectInstanceAccelerationStructureDescriptor);
 _MTL_PRIVATE_DEF_CLS(MTL4InstanceAccelerationStructureDescriptor);
 _MTL_PRIVATE_DEF_CLS(MTL4LibraryDescriptor);
 _MTL_PRIVATE_DEF_CLS(MTL4LibraryFunctionDescriptor);
-_MTL_PRIVATE_DEF_CLS(MTL4LinkedFunctions);
 _MTL_PRIVATE_DEF_CLS(MTL4MachineLearningPipelineDescriptor);
 _MTL_PRIVATE_DEF_CLS(MTL4MachineLearningPipelineReflection);
 _MTL_PRIVATE_DEF_CLS(MTL4MeshRenderPipelineDescriptor);
@@ -432,8 +430,6 @@ _MTL_PRIVATE_DEF_SEL(buildAccelerationStructure_descriptor_scratchBuffer_,
     "buildAccelerationStructure:descriptor:scratchBuffer:");
 _MTL_PRIVATE_DEF_SEL(buildAccelerationStructure_descriptor_scratchBuffer_scratchBufferOffset_,
     "buildAccelerationStructure:descriptor:scratchBuffer:scratchBufferOffset:");
-_MTL_PRIVATE_DEF_SEL(cancel,
-    "cancel");
 _MTL_PRIVATE_DEF_SEL(captureObject,
     "captureObject");
 _MTL_PRIVATE_DEF_SEL(clearBarrier,
@@ -724,8 +720,6 @@ _MTL_PRIVATE_DEF_SEL(enqueue,
     "enqueue");
 _MTL_PRIVATE_DEF_SEL(enqueueBarrier,
     "enqueueBarrier");
-_MTL_PRIVATE_DEF_SEL(entryCount,
-    "entryCount");
 _MTL_PRIVATE_DEF_SEL(error,
     "error");
 _MTL_PRIVATE_DEF_SEL(errorOptions,
@@ -1674,8 +1668,8 @@ _MTL_PRIVATE_DEF_SEL(resetTextureAccessCounters_region_mipLevel_slice_,
     "resetTextureAccessCounters:region:mipLevel:slice:");
 _MTL_PRIVATE_DEF_SEL(resetWithRange_,
     "resetWithRange:");
-_MTL_PRIVATE_DEF_SEL(resolveCounterHeap_withRange_intoBuffer_atOffset_waitFence_updateFence_,
-    "resolveCounterHeap:withRange:intoBuffer:atOffset:waitFence:updateFence:");
+_MTL_PRIVATE_DEF_SEL(resolveCounterHeap_withRange_intoBuffer_waitFence_updateFence_,
+    "resolveCounterHeap:withRange:intoBuffer:waitFence:updateFence:");
 _MTL_PRIVATE_DEF_SEL(resolveCounterRange_,
     "resolveCounterRange:");
 _MTL_PRIVATE_DEF_SEL(resolveCounters_inRange_destinationBuffer_destinationOffset_,
@@ -1882,6 +1876,8 @@ _MTL_PRIVATE_DEF_SEL(setControlPointFormat_,
     "setControlPointFormat:");
 _MTL_PRIVATE_DEF_SEL(setControlPointStride_,
     "setControlPointStride:");
+_MTL_PRIVATE_DEF_SEL(setCount_,
+    "setCount:");
 _MTL_PRIVATE_DEF_SEL(setCounterSet_,
     "setCounterSet:");
 _MTL_PRIVATE_DEF_SEL(setCpuCacheMode_,
@@ -1946,8 +1942,6 @@ _MTL_PRIVATE_DEF_SEL(setEndOfFragmentSampleIndex_,
     "setEndOfFragmentSampleIndex:");
 _MTL_PRIVATE_DEF_SEL(setEndOfVertexSampleIndex_,
     "setEndOfVertexSampleIndex:");
-_MTL_PRIVATE_DEF_SEL(setEntryCount_,
-    "setEntryCount:");
 _MTL_PRIVATE_DEF_SEL(setErrorOptions_,
     "setErrorOptions:");
 _MTL_PRIVATE_DEF_SEL(setFastMathEnabled_,

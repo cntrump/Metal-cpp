@@ -25,6 +25,7 @@
 #include "MTLHeaderBridge.hpp"
 #include "MTLPrivate.hpp"
 #include <CoreFoundation/CoreFoundation.h>
+#include <cstdint>
 
 #include <functional>
 

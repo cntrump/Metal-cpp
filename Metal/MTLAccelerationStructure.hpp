@@ -29,6 +29,7 @@
 #include "MTLResource.hpp"
 #include "MTLStageInputOutputDescriptor.hpp"
 #include "MTLTypes.hpp"
+#include <cstdint>
 
 namespace MTL
 {

@@ -38,6 +38,7 @@ class FunctionHandle;
 class IntersectionFunctionTable;
 class IntersectionFunctionTableDescriptor;
 class LinkedFunctions;
+class LogicalToPhysicalColorAttachmentMap;
 class MeshRenderPipelineDescriptor;
 class PipelineBufferDescriptorArray;
 class RenderPipelineColorAttachmentDescriptor;
@@ -181,6 +182,19 @@ public:
     BlendFactor                              sourceRGBBlendFactor() const;
 
     ColorWriteMask                           writeMask() const;
+};
+class LogicalToPhysicalColorAttachmentMap : public NS::Copying<LogicalToPhysicalColorAttachmentMap>
+{
+public:
+    static LogicalToPhysicalColorAttachmentMap* alloc();
+
+    NS::UInteger                                getPhysicalIndex(NS::UInteger logicalIndex);
+
+    LogicalToPhysicalColorAttachmentMap*        init();
+
+    void                                        reset();
+
+    void                                        setPhysicalIndex(NS::UInteger physicalIndex, NS::UInteger logicalIndex);
 };
 class RenderPipelineReflection : public NS::Referencing<RenderPipelineReflection>
 {
@@ -749,6 +763,31 @@ _MTL_INLINE MTL::BlendFactor MTL::RenderPipelineColorAttachmentDescriptor::sourc
 _MTL_INLINE MTL::ColorWriteMask MTL::RenderPipelineColorAttachmentDescriptor::writeMask() const
 {
     return Object::sendMessage<MTL::ColorWriteMask>(this, _MTL_PRIVATE_SEL(writeMask));
+}
+
+_MTL_INLINE MTL::LogicalToPhysicalColorAttachmentMap* MTL::LogicalToPhysicalColorAttachmentMap::alloc()
+{
+    return NS::Object::alloc<MTL::LogicalToPhysicalColorAttachmentMap>(_MTL_PRIVATE_CLS(MTLLogicalToPhysicalColorAttachmentMap));
+}
+
+_MTL_INLINE NS::UInteger MTL::LogicalToPhysicalColorAttachmentMap::getPhysicalIndex(NS::UInteger logicalIndex)
+{
+    return Object::sendMessage<NS::UInteger>(this, _MTL_PRIVATE_SEL(getPhysicalIndexForLogicalIndex_), logicalIndex);
+}
+
+_MTL_INLINE MTL::LogicalToPhysicalColorAttachmentMap* MTL::LogicalToPhysicalColorAttachmentMap::init()
+{
+    return NS::Object::init<MTL::LogicalToPhysicalColorAttachmentMap>();
+}
+
+_MTL_INLINE void MTL::LogicalToPhysicalColorAttachmentMap::reset()
+{
+    Object::sendMessage<void>(this, _MTL_PRIVATE_SEL(reset));
+}
+
+_MTL_INLINE void MTL::LogicalToPhysicalColorAttachmentMap::setPhysicalIndex(NS::UInteger physicalIndex, NS::UInteger logicalIndex)
+{
+    Object::sendMessage<void>(this, _MTL_PRIVATE_SEL(setPhysicalIndex_forLogicalIndex_), physicalIndex, logicalIndex);
 }
 
 _MTL_INLINE MTL::RenderPipelineReflection* MTL::RenderPipelineReflection::alloc()

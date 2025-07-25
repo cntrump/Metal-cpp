@@ -165,10 +165,6 @@ namespace MTLFX
                                     "colorTextureUsage" );
             _MTLFX_PRIVATE_DEF_SEL( deltaTime,
                                     "deltaTime" );
-            _MTLFX_PRIVATE_DEF_SEL( denoisedScaler,
-                                    "denoisedScaler" );
-            _MTLFX_PRIVATE_DEF_SEL( denoisedScaler4,
-                                    "denoisedScaler4" );
             _MTLFX_PRIVATE_DEF_SEL( denoiseStrengthMaskTexture,
                                     "denoiseStrengthMaskTexture" );
             _MTLFX_PRIVATE_DEF_SEL( denoiseStrengthMaskTextureFormat,
@@ -319,10 +315,6 @@ namespace MTLFX
                                     "setColorTextureFormat:" );
             _MTLFX_PRIVATE_DEF_SEL( setDeltaTime_,
                                     "setDeltaTime:" );
-            _MTLFX_PRIVATE_DEF_SEL( setDenoisedScaler_,
-                                    "setDenoisedScaler:" );
-            _MTLFX_PRIVATE_DEF_SEL( setDenoisedScaler4_,
-                                    "setDenoisedScaler4:" );
             _MTLFX_PRIVATE_DEF_SEL( setDenoiseStrengthMaskTexture_,
                                     "setDenoiseStrengthMaskTexture:" );
             _MTLFX_PRIVATE_DEF_SEL( setDenoiseStrengthMaskTextureEnabled_,
@@ -427,8 +419,6 @@ namespace MTLFX
                                     "setRoughnessTextureFormat:" );
             _MTLFX_PRIVATE_DEF_SEL( setScaler_,
                                     "setScaler:" );
-            _MTLFX_PRIVATE_DEF_SEL( setScaler4_,
-                                    "setScaler4:" );
             _MTLFX_PRIVATE_DEF_SEL( setShouldResetHistory_,
                                     "setShouldResetHistory:" );
             _MTLFX_PRIVATE_DEF_SEL( specularHitDistanceTexture,

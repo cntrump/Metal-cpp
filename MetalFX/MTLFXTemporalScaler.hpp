@@ -97,7 +97,11 @@ namespace MTLFX
         static bool                                 supportsMetal4FX( const MTL::Device* pDevice );
     };
 
-    class TemporalScalerBase : public NS::Referencing< TemporalScaler >
+    class FrameInterpolatableScaler : public NS::Copying< FrameInterpolatableScaler >
+    {
+	};
+
+    class TemporalScalerBase : public NS::Referencing< TemporalScaler, FrameInterpolatableScaler >
     {
     public:
         MTL::TextureUsage                           colorTextureUsage() const;

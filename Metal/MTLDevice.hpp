@@ -32,11 +32,12 @@
 #include "MTLTexture.hpp"
 #include "MTLTypes.hpp"
 #include <IOSurface/IOSurfaceRef.h>
+#include <cstdint>
+#include <dispatch/dispatch.h>
 
 #include <TargetConditionals.h>
 #include <cstdint>
 #include <functional>
-#include <dispatch/dispatch.h>
 
 namespace MTL
 {

@@ -24,6 +24,8 @@
 #include "MTLDefines.hpp"
 #include "MTLHeaderBridge.hpp"
 #include "MTLPrivate.hpp"
+#include <cstdint>
+#include <dispatch/dispatch.h>
 
 #include <cstdint>
 #include <functional>

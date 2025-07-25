@@ -70,6 +70,7 @@ _MTL_ENUM(NS::UInteger, LanguageVersion) {
     LanguageVersion3_0 = 196608,
     LanguageVersion3_1 = 196609,
     LanguageVersion3_2 = 196610,
+    LanguageVersion4_0 = 262144,
 };
 
 _MTL_ENUM(NS::Integer, LibraryType) {

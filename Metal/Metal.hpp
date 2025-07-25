@@ -102,7 +102,6 @@
 #include "MTL4CompilerTask.hpp"
 #include "MTL4LibraryDescriptor.hpp"
 #include "MTL4FunctionDescriptor.hpp"
-#include "MTL4LinkedFunctions.hpp"
 #include "MTL4LibraryFunctionDescriptor.hpp"
 #include "MTL4SpecializedFunctionDescriptor.hpp"
 #include "MTL4StitchedFunctionDescriptor.hpp"

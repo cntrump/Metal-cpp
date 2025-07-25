@@ -22,6 +22,7 @@
 
 #include "../Foundation/Foundation.hpp"
 #include "MTLDefines.hpp"
+#include "MTLGPUAddress.hpp"
 #include "MTLHeaderBridge.hpp"
 #include "MTLPrivate.hpp"
 #include "MTLResource.hpp"
@@ -44,7 +45,7 @@ public:
 
     void             didModifyRange(NS::Range range);
 
-    uint64_t         gpuAddress() const;
+    GPUAddress       gpuAddress() const;
 
     NS::UInteger     length() const;
 
@@ -77,9 +78,9 @@ _MTL_INLINE void MTL::Buffer::didModifyRange(NS::Range range)
     Object::sendMessage<void>(this, _MTL_PRIVATE_SEL(didModifyRange_), range);
 }
 
-_MTL_INLINE uint64_t MTL::Buffer::gpuAddress() const
+_MTL_INLINE MTL::GPUAddress MTL::Buffer::gpuAddress() const
 {
-    return Object::sendMessage<uint64_t>(this, _MTL_PRIVATE_SEL(gpuAddress));
+    return Object::sendMessage<MTL::GPUAddress>(this, _MTL_PRIVATE_SEL(gpuAddress));
 }
 
 _MTL_INLINE NS::UInteger MTL::Buffer::length() const

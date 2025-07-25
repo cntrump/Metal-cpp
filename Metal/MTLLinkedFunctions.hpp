@@ -27,7 +27,6 @@
 
 namespace MTL
 {
-class LinkedFunctions;
 
 class LinkedFunctions : public NS::Copying<LinkedFunctions>
 {

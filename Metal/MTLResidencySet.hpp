@@ -24,6 +24,7 @@
 #include "MTLDefines.hpp"
 #include "MTLHeaderBridge.hpp"
 #include "MTLPrivate.hpp"
+#include <cstdint>
 
 namespace MTL
 {

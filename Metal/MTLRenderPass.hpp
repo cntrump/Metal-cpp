@@ -24,6 +24,7 @@
 #include "MTLDefines.hpp"
 #include "MTLHeaderBridge.hpp"
 #include "MTLPrivate.hpp"
+#include <cstdint>
 
 namespace MTL
 {
@@ -274,6 +275,8 @@ public:
 
     void                                             setStencilAttachment(const MTL::RenderPassStencilAttachmentDescriptor* stencilAttachment);
 
+    void                                             setSupportColorAttachmentMapping(bool supportColorAttachmentMapping);
+
     void                                             setThreadgroupMemoryLength(NS::UInteger threadgroupMemoryLength);
 
     void                                             setTileHeight(NS::UInteger tileHeight);
@@ -285,6 +288,8 @@ public:
     void                                             setVisibilityResultType(MTL::VisibilityResultType visibilityResultType);
 
     RenderPassStencilAttachmentDescriptor*           stencilAttachment() const;
+
+    bool                                             supportColorAttachmentMapping() const;
 
     NS::UInteger                                     threadgroupMemoryLength() const;
 
@@ -721,6 +726,11 @@ _MTL_INLINE void MTL::RenderPassDescriptor::setStencilAttachment(const MTL::Rend
     Object::sendMessage<void>(this, _MTL_PRIVATE_SEL(setStencilAttachment_), stencilAttachment);
 }
 
+_MTL_INLINE void MTL::RenderPassDescriptor::setSupportColorAttachmentMapping(bool supportColorAttachmentMapping)
+{
+    Object::sendMessage<void>(this, _MTL_PRIVATE_SEL(setSupportColorAttachmentMapping_), supportColorAttachmentMapping);
+}
+
 _MTL_INLINE void MTL::RenderPassDescriptor::setThreadgroupMemoryLength(NS::UInteger threadgroupMemoryLength)
 {
     Object::sendMessage<void>(this, _MTL_PRIVATE_SEL(setThreadgroupMemoryLength_), threadgroupMemoryLength);
@@ -749,6 +759,11 @@ _MTL_INLINE void MTL::RenderPassDescriptor::setVisibilityResultType(MTL::Visibil
 _MTL_INLINE MTL::RenderPassStencilAttachmentDescriptor* MTL::RenderPassDescriptor::stencilAttachment() const
 {
     return Object::sendMessage<MTL::RenderPassStencilAttachmentDescriptor*>(this, _MTL_PRIVATE_SEL(stencilAttachment));
+}
+
+_MTL_INLINE bool MTL::RenderPassDescriptor::supportColorAttachmentMapping() const
+{
+    return Object::sendMessageSafe<bool>(this, _MTL_PRIVATE_SEL(supportColorAttachmentMapping));
 }
 
 _MTL_INLINE NS::UInteger MTL::RenderPassDescriptor::threadgroupMemoryLength() const

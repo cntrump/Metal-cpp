@@ -28,6 +28,7 @@
 #include "MTLPrivate.hpp"
 #include "MTLRenderPass.hpp"
 #include "MTLTypes.hpp"
+#include <cstdint>
 
 namespace MTL
 {
@@ -39,6 +40,7 @@ class Fence;
 class Heap;
 class IndirectCommandBuffer;
 class IntersectionFunctionTable;
+class LogicalToPhysicalColorAttachmentMap;
 class RenderPipelineState;
 class Resource;
 class SamplerState;
@@ -186,6 +188,8 @@ public:
     void         sampleCountersInBuffer(const MTL::CounterSampleBuffer* sampleBuffer, NS::UInteger sampleIndex, bool barrier);
 
     void         setBlendColor(float red, float green, float blue, float alpha);
+
+    void         setColorAttachmentMap(const MTL::LogicalToPhysicalColorAttachmentMap* mapping);
 
     void         setColorStoreAction(MTL::StoreAction storeAction, NS::UInteger colorAttachmentIndex);
     void         setColorStoreActionOptions(MTL::StoreActionOptions storeActionOptions, NS::UInteger colorAttachmentIndex);
@@ -465,6 +469,11 @@ _MTL_INLINE void MTL::RenderCommandEncoder::sampleCountersInBuffer(const MTL::Co
 _MTL_INLINE void MTL::RenderCommandEncoder::setBlendColor(float red, float green, float blue, float alpha)
 {
     Object::sendMessage<void>(this, _MTL_PRIVATE_SEL(setBlendColorRed_green_blue_alpha_), red, green, blue, alpha);
+}
+
+_MTL_INLINE void MTL::RenderCommandEncoder::setColorAttachmentMap(const MTL::LogicalToPhysicalColorAttachmentMap* mapping)
+{
+    Object::sendMessage<void>(this, _MTL_PRIVATE_SEL(setColorAttachmentMap_), mapping);
 }
 
 _MTL_INLINE void MTL::RenderCommandEncoder::setColorStoreAction(MTL::StoreAction storeAction, NS::UInteger colorAttachmentIndex)
